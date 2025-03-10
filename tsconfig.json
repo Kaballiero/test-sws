@@ -12,6 +12,9 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "paths": {
+      "@assets/*": ["assets/*"]
+    },
   }
 }

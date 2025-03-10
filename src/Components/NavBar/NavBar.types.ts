@@ -1,0 +1,3 @@
+interface NavBarProps {
+    activeHref: string;
+}

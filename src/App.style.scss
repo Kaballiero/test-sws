@@ -1,19 +1,13 @@
 body {
     margin: 0;
-    height: 100vh;
+    height: 100;
     width: 100vw;
-
-    > #root {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: inherit;
-        width: inherit;
-
-        > iframe {
-            height: 100%;
-            width: 100%;
-            border: unset;
-        }
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+   
+    *{
+        box-sizing: border-box;
     }
 }
+
