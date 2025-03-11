@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import { NavBar } from 'src/components/navBar';
-import { MenuHeader } from 'src/components/menu/MenuHeader';
-import { MenuList } from 'src/components/menu/MenuList';
+import { NavBar } from '../../components/navBar';
+import { MenuHeader } from '../../components/menu/MenuHeader';
+import { MenuList } from '../../components/menu/MenuList';
 import styles from './Layout.module.scss';
 
 export function Layout() {

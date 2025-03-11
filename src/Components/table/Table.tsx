@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import useActions from 'src/hooks/UseAction';
-import { getTableData, getEditState, getAddingRowId } from 'src/selectors/rowSelector';
-import { ITreeResponse } from 'src/share/Interfaces';
+import useActions from '../../hooks/UseAction';
+import { getTableData, getEditState, getAddingRowId } from '../../selectors/rowSelector';
+import { ITreeResponse } from '../../share/Interfaces';
 import { initializeTableData, createRowHandlers, getTotalChildCount } from './Table.service';
 import styles from './Table.module.scss';
-import { useGetAllRowQuery, useCreateRowMutation, useUpdateRowMutation, useDeleteRowMutation } from 'src/app/store/api';
+import { useGetAllRowQuery, useCreateRowMutation, useUpdateRowMutation, useDeleteRowMutation } from '../../app/store/api';
 import TableRow from '../tableRow';
 
 export default function Table() {

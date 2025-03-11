@@ -1,4 +1,4 @@
-import { ITreeResponse } from 'src/share/Interfaces';
+import { ITreeResponse } from '../../share/Interfaces';
 
 export interface TableRowParams {
     rid: number;

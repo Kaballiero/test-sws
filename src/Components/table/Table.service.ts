@@ -1,5 +1,5 @@
-import { ITreeResponse } from 'src/share/Interfaces';
-import { TableRowHandlers, RowUpdateBody, RowCreateBody } from './Table.types';
+import { ITreeResponse } from '../../share/Interfaces';
+import { RowUpdateBody, RowCreateBody } from './Table.types';
 
 export function initializeTableData(
   initialRows: ITreeResponse[] | undefined,
@@ -42,48 +42,47 @@ export function getRowCreateBody(newChild: Partial<ITreeResponse>, parentId: num
     parentId,
   };
 }
-export const getChildCount= (row: ITreeResponse): number => {
-  
+export const getChildCount = (row: ITreeResponse): number => {
+
   let total = row.child.length;
-  
-  row.child.forEach((child) => 
-    { 
-       total += getChildCount(child); // Рекурсивно считаем вложенные child
+
+  row.child.forEach((child) => {
+    total += getChildCount(child); // Рекурсивно считаем вложенные child
   });
   return total;
 };
 
-export const getTotalChildCount=(row: ITreeResponse): number=>{
+export const getTotalChildCount = (row: ITreeResponse): number => {
   let total = row.child.length;
   for (let i = 0; i < row.child.length - 1; i++) {
-    total +=  getChildCount(row.child[i]); // Рекурсивно считаем всех потомков
-}
-return total
+    total += getChildCount(row.child[i]); // Рекурсивно считаем всех потомков
+  }
+  return total
 }
 export function createRowHandlers(
-    updateRow: any,
-    createRow: any,
-    deleteRow: any,
-    actions: any,
-    setEditingRowId: (id: number | null) => void,
-    isEditingActive: boolean,
-    addingRowId: number | null
-  ) {
-    const { updateRowData, addChildData, deleteRowData, openEdit, closedEdit, openAdd, closeAdd } = actions;
-  
-    const onSubmit = async (updatedRow: ITreeResponse): Promise<void> => {
-      try {
-        await updateRow({
-          params: { rid: updatedRow.id },
-          body: updatedRow,
-        }).unwrap();
-        updateRowData(updatedRow);
-        setEditingRowId(null);
-        closedEdit();
-      } catch (error) {
-        console.error('Ошибка обновления строки:', error);
-      }
-    };
+  updateRow: any,
+  createRow: any,
+  deleteRow: any,
+  actions: any,
+  setEditingRowId: (id: number | null) => void,
+  isEditingActive: boolean,
+  addingRowId: number | null
+) {
+  const { updateRowData, addChildData, deleteRowData, openEdit, closedEdit, openAdd, closeAdd } = actions;
+
+  const onSubmit = async (updatedRow: ITreeResponse): Promise<void> => {
+    try {
+      await updateRow({
+        params: { rid: updatedRow.id },
+        body: updatedRow,
+      }).unwrap();
+      updateRowData(updatedRow);
+      setEditingRowId(null);
+      closedEdit();
+    } catch (error) {
+      console.error('Ошибка обновления строки:', error);
+    }
+  };
 
   const onAddChild = async (parentId: number, newChild: Partial<ITreeResponse>, resetForm: () => void) => {
     try {

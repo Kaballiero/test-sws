@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IResponse, ITreeResponse, IRowResponse } from 'src/share/Interfaces';
+import { IResponse, ITreeResponse, IRowResponse } from '../../../share/Interfaces';
 
 // Интерфейсы
 interface IInitialState {

@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useGetAllRowQuery } from 'src/app/store/api/Entity.api';
-import useActions from 'src/hooks/UseAction';
+import { useGetAllRowQuery } from '../../app/store/api/Entity.api';
+import useActions from '../../hooks/UseAction';
 import { getSortedTableData, getCurrLvl } from './Main.service';
-import { getTableData } from 'src/selectors/rowSelector';
-import Table from 'src/components/table/Table';
-import { Loader } from 'src/components/Loader/Loader';
-import {  ITreeResponse } from 'src/share/Interfaces';
-import { COLUMN_MAP } from 'src/share/Constants';
+import { getTableData } from '../../selectors/rowSelector';
+import Table from '../../components/table/Table';
+import { Loader } from '../../components/Loader/Loader';
+import {  ITreeResponse } from '../../share/Interfaces';
+import { COLUMN_MAP } from '../../share/Constants';
 import styles from './Main.module.scss';
-import { ITreeResponseWithLvl } from 'src/components/table/Table.types';
+import { ITreeResponseWithLvl } from '../../components/table/Table.types';
 
 
 

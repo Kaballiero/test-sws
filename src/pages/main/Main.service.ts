@@ -1,4 +1,4 @@
-import { enumRowType } from 'src/share/Types';
+import { enumRowType } from '../../share/Types';
 import { IEntity, IOutlayRowUpdateRequest,  IResponse,  ITreeResponse, } from '../../share/Interfaces'
 
 export function getSortedTableData(tableData: IResponse): IResponse {

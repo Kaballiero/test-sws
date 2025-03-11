@@ -1,6 +1,6 @@
 import { fetchBaseQuery, EndpointBuilder } from '@reduxjs/toolkit/query/react';
-import { BASE_URL, getRowReqPath, createRowReqPath, updateRowReqPath, deleteRowReqPath } from 'src/app/routes';
-import { IResponse, IOutlayResponse } from 'src/share/Interfaces';
+import { BASE_URL, getRowReqPath, createRowReqPath, updateRowReqPath, deleteRowReqPath } from '../../../app/routes';
+import { IResponse, IOutlayResponse } from '../../../share/Interfaces';
 import { ICreateRowResponse, IRequestCreateRows, IRequestUpdateRows, IRequestDeleteRows } from './Entity.api.types';
 
 export function getBaseQuery() {

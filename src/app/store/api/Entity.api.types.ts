@@ -1,4 +1,4 @@
-import { IOutlayResponse, IResponse, IRowResponse } from 'src/share/Interfaces';
+import { IOutlayResponse, IRowResponse } from '../../../share/Interfaces';
 
 export interface IRequestCreateRows {
   body: IOutlayResponse;
