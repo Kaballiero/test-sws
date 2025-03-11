@@ -1,0 +1,166 @@
+
+@import "../../styles/Variables.scss";
+
+.table_row {
+    height: 30;
+    padding: 5px;
+    border: 1px solid $colorDarkGrey;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+
+}
+
+.row_name_container {
+    flex: 1;
+}
+
+.input_container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.input {
+    background-color: $colorBlackPrimary;
+    border: 0;
+    font-size: 14px;
+    font-family: "Roboto";
+    color: $colorWhitePrimary;
+    line-height: 18.2px;
+    letter-spacing: 0.1px;
+    width: 100%;
+    height: 100%;
+    padding: 2px 5px;
+    position: relative;
+
+    &:disabled {
+        background-color: $colorBlackPrimary;
+        border: 0;
+    }
+
+    &_active {
+        border: 1px solid $colorDarkGrey;
+        border-radius: 6px;
+    }
+
+    &_error {
+        border: 1px solid $colorError;
+        border-radius: 6px;
+        font-size: 14px;
+        font-family: "Roboto";
+        color: $colorWhitePrimary;
+        line-height: 18.2px;
+        letter-spacing: 0.1px;
+        width: 100%;
+        padding: 2px 5px;
+        position: relative;
+    }
+
+    &:focus {
+        outline: none;
+        background-color: $colorBlackPrimary;
+        border: 1px solid $colorDarkGrey;
+        border-radius: 6px;
+    }
+
+    &[type="number"] {
+        -moz-appearance: textfield;
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+}
+
+.error_message {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: $colorError;
+    font-size: 12px;
+    pointer-events: none;
+    background: $colorBlackPrimary;
+    padding: 0 2px;
+}
+
+.level_container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: min-content;
+    padding: 5px;
+
+    &_active {
+        background: $colorDarkGrey;
+    }
+}
+
+.level_number {
+    margin-right: 10px;
+}
+
+.button_container {
+    display: flex;
+    gap: 5px;
+}
+
+.edit_button {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+.edit_button,
+.delete_button {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: local;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete_button {
+    margin-left: 10px;
+}
+
+.line_vertical {
+    position: absolute;
+    top: 21px;
+    left: 11px;
+    width: 1px;
+    background-color: $colorWhitePrimary;
+}
+
+.line_hor {
+    position: absolute;
+    left: -7px;
+    bottom: 10px;
+    height: 1px;
+    width: 7px;
+    background-color: $colorWhitePrimary;
+}
+
+.add_icon {
+    width: 20px;
+    height: 20px;
+}
+
+.delete_icon {
+    width: 20px;
+    height: 20px;
+}
+
+.icon_disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}

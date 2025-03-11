@@ -1,3 +1,4 @@
+@import "../../styles/Variables.scss";
 .nav-bar{
   box-sizing: border-box;
   height: 45px;
@@ -7,6 +8,6 @@
   align-items: center;
   justify-content: start;
   
-  background: #27272A;;
-  border: 1px solid #27272A;;
+  background: $colorBlackPrimary;
+  border: 1px solid $colorBlackPrimary;
 }

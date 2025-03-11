@@ -46,7 +46,7 @@ const MenuHeader: React.FC<MenuHeaderProps> = ({
               variant="body1"
               sx={{
                 fontWeight: 600,
-                color: '#fff',
+                color: '$colorWhitePrimary',
                 whiteSpace: 'nowrap',
               }}
             >
@@ -145,7 +145,7 @@ const MenuList: React.FC<MenuListProps> = ({
                   minWidth: 0,
                   mr: isOpen ? 3 : 'auto',
                   justifyContent: 'center',
-                  color: '#fff',
+                  color: '$colorWhitePrimary',
                 }}
               >
                 {index === 0 ? (
@@ -222,7 +222,7 @@ const Menu: React.FC = () => {
           width: isOpen ? 240 : 56,
           boxSizing: 'border-box',
           backgroundColor: '#212121',
-          color: '#fff',
+          color: '$colorWhitePrimary',
           transition: 'width 0.3s',
           overflowX: 'hidden',
         },

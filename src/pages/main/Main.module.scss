@@ -1,0 +1,115 @@
+@import "../../styles/Variables.scss";
+
+.table__container {
+  width: 100%;
+  border: 1px solid $colorDarkGrey;
+  background: $colorBlackPrimary;
+  color: $colorWhitePrimary;
+  font-family: "Roboto";
+}
+
+.table_header {
+  
+  background: $colorBlackPrimary;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 1fr;
+}
+
+.table_header_cell {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex: 1;
+  text-align: center;
+  margin: 0;
+
+  padding: 0 10px;
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.table_content_row {
+  display: flex;
+  border-bottom: 1px solid $colorLightGrey;
+  position: relative;
+
+  &:hover {
+    background-color: #2a2a2a;
+  }
+}
+
+.table_content_cell {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid $colorLightGrey;
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.tree_node {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  display: inline-block;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.action_icon {
+  display: inline-block;
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #007bff;
+
+  &:hover {
+    color: #0056b3;
+  }
+}
+
+.rowName {
+  display: inline-block;
+}
+
+.vertical_line {
+  position: absolute;
+  top: -20px;
+  bottom: 0;
+  left: 8px;
+  width: 1px;
+  background-color: $colorLightBlue;
+}
+
+.horizontal_line {
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  width: 10px;
+  height: 1px;
+  background-color: $colorLightBlue;
+  transform: translateY(-50%);
+}
+
+.input_field {
+  padding: 5px;
+  border: 1px solid $colorLightGrey;
+  border-radius: 4px;
+  width: 100%;
+  background-color: $colorBlackPrimary;
+  color: $colorWhitePrimary;
+}
+
+.row_block {
+  background-color: $colorWhitePrimary;
+  pointer-events: none;
+}

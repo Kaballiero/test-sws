@@ -52,10 +52,9 @@ module.exports = () => {
                     type: 'asset/resource'
                 },
                 {
-                    test: /\.svg$/i,
-                    issuer: /\.[jt]sx?$/,
-                    use: ['@svgr/webpack']
-                }
+                    test: /\.svg$/,
+                    use: ['file-loader'],
+                },
             ]
         },
         plugins: [

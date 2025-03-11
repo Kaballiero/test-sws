@@ -11,10 +11,3 @@ export const navigationService = {
   },
 };
 
-// Optional: Export route constants if they're used elsewhere
-export const ROUTES = {
-  HOME: '/',
-  MANAGEMENT: '/management',
-} as const;
-
-export type RouteKey = keyof typeof ROUTES;

@@ -1,38 +1,30 @@
-// src/components/Layout/Layout.tsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import { NavBar } from '../NavBar';
-import './Layout.style.scss';
-import { MenuHeader, MenuList } from '../Menu/index';
+import { NavBar } from 'src/components/navBar';
+import { MenuHeader } from 'src/components/menu/MenuHeader';
+import { MenuList } from 'src/components/menu/MenuList';
+import styles from './Layout.module.scss';
 
-
-const Layout: React.FC = () => {
+export function Layout() {
   const [isOpen, setIsOpen] = useState(true);
   const [isListOpen, setIsListOpen] = useState(true);
   const [activeItem, setActiveItem] = useState('Стрингельно-монтажные работы');
 
-  const handleToggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
+  const handleToggleSidebar = () => setIsOpen((prev) => !prev);
+  const handleToggleList = () => setIsListOpen((prev) => !prev);
+  const handleItemClick = (label: string) => setActiveItem(label);
 
-  const handleToggleList = () => {
-    setIsListOpen(!isListOpen);
-  };
-
-  const handleItemClick = (label: string) => {
-    setActiveItem(label); 
-  };
   return (
-    <div className="layout">
+    <div className={styles.layout}>
       <NavBar />
-      <div className="layout__container">
+      <div className={styles.layout__container}>
         <MenuHeader
           isOpen={isOpen}
           isListOpen={isListOpen}
           activeItem={activeItem}
           onToggleList={handleToggleList}
         />
-        <main className="layout__content">
+        <main className={styles.layout__content}>
           <MenuList
             isOpen={isOpen}
             isListOpen={isListOpen}
@@ -45,6 +37,6 @@ const Layout: React.FC = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Layout;

@@ -4,23 +4,15 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import ReplyIcon from '@mui/icons-material/Reply';
 import AppsIcon from '@mui/icons-material/Apps';
 
-import { CustomButton, CustomIconButton } from '../MUI/CustomMui';
-import { navigationService, ROUTES } from './NavBar.service';
+import { navigationService } from './NavBarService';
 
 import './NavBar.style.scss';
+import { NAV_ITEMS, ROUTES } from './NanBar.constants';
+import { CustomIconButton, CustomButton } from './NavBar.styles';
+import { RouteKey } from './NavBar.types';
 
-const NAV_ITEMS = [
-  {
-    name: 'btn_home',
-    label: 'Просмотр',
-    path: ROUTES.HOME,
-  },
-  {
-    name: 'btn_admin',
-    label: 'Управление',
-    path: ROUTES.MANAGEMENT,
-  },
-];
+
+
 
 const NavBar: React.FC = () => {
   const { pathname } = useLocation();
@@ -31,7 +23,7 @@ const NavBar: React.FC = () => {
   }, [navigate]);
 
   const handleNavigation = useCallback(
-    (path: typeof ROUTES[keyof typeof ROUTES]) => {
+    (path: typeof ROUTES[RouteKey]) => {
       navigationService.navigateTo(navigate, path);
     },
     [navigate]
